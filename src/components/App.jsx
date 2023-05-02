@@ -3,6 +3,7 @@ import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
 import Notification from './Notification/Notification';
+import styles from './App.module.css';
 
 const App = () => {
   const [state, setState] = useState({
@@ -34,7 +35,7 @@ const App = () => {
   const percentage = countPositiveFeedbackPercentage();
 
   return (
-    <>
+    <div className={styles.container}>
       <Section title="Please leave feedback">
         <FeedbackOptions
           options={Object.keys(state)}
@@ -54,7 +55,7 @@ const App = () => {
       ) : (
         <Notification message="There is no feedback"></Notification>
       )}
-    </>
+    </div>
   );
 };
 

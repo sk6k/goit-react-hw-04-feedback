@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
+import styles from './FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ onLeaveFeedback, options }) => {
   return (
-    <>
+    <div className={styles.buttons}>
       {options.map(option => (
         <button
+          className={styles.button}
           key={option}
           type="button"
           onClick={onLeaveFeedback}
@@ -13,7 +15,7 @@ const FeedbackOptions = ({ onLeaveFeedback, options }) => {
           {option}
         </button>
       ))}
-    </>
+    </div>
   );
 };
 
